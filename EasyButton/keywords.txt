@@ -15,6 +15,7 @@ IsPushed	KEYWORD2
 InPush  	KEYWORD2
 IsHold	        KEYWORD2
 SetThreshold	KEYWORD2
+SetCallFunction KEYWORD2
 
 #######################################
 #	Constants	(LITERAL1)
@@ -24,4 +25,5 @@ CALL_NONE	        LITERAL1
 CALL_IN_PUSHED	        LITERAL1
 CALL_IN_PUSH	        LITERAL1
 CALL_IN_HOLD	        LITERAL1
+CALL_IN_RELEASE         LITERAL1
 CALL_IN_ALL	        LITERAL1
