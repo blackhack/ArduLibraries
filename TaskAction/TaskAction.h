@@ -36,6 +36,7 @@ public:
     void Enable(bool state) { m_state = state; }
     bool GetCurrentState() { return m_state; }
     unsigned int GetCurrentTick() { return m_CurrentTick; }
+    unsigned long GetCurrentInterval() { return m_interval; }
     void ResetTicks() { m_CurrentTick = 0; }
 };
 
