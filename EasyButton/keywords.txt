@@ -1,0 +1,27 @@
+#######################################
+#	Syntax	Coloring
+#######################################
+
+#######################################
+#	Classes	(KEYWORD1)
+#######################################
+EasyButton	KEYWORD1
+
+#######################################
+#	Methods	and Functions (KEYWORD2)
+####################################### 
+update	        KEYWORD2
+IsPushed	KEYWORD2
+InPush  	KEYWORD2
+IsHold	        KEYWORD2
+SetThreshold	KEYWORD2
+
+#######################################
+#	Constants	(LITERAL1)
+#######################################
+DEFAULT_PUSH_THRESHOLD	LITERAL1
+CALL_NONE	        LITERAL1
+CALL_IN_PUSHED	        LITERAL1
+CALL_IN_PUSH	        LITERAL1
+CALL_IN_HOLD	        LITERAL1
+CALL_IN_ALL	        LITERAL1
