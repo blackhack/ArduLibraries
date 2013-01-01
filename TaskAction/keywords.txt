@@ -10,13 +10,14 @@ TaskAction	KEYWORD1
 #######################################
 #	Methods	and Functions (KEYWORD2)
 ####################################### 
-tick	        KEYWORD2
-SetInterval	KEYWORD2
-SetTicks	KEYWORD2
-Enable	        KEYWORD2
-GetCurrentState	KEYWORD2
-GetCurrentTick	KEYWORD2
-ResetTicks	KEYWORD2
+tick	           KEYWORD2
+SetInterval	   KEYWORD2
+SetTicks	   KEYWORD2
+Enable	           KEYWORD2
+GetCurrentState	   KEYWORD2
+GetCurrentTick	   KEYWORD2
+GetCurrentInterval KEYWORD2
+ResetTicks	   KEYWORD2
 
 #######################################
 #	Constants	(LITERAL1)
