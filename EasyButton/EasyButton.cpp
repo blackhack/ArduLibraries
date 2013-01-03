@@ -1,6 +1,6 @@
 #include "EasyButton.h"
 
-EasyButton::EasyButton(int buttonPin, void (*function)() /* = NULL */, FunctionCallOptions call_option /* = CALL_NONE */)
+EasyButton::EasyButton(int buttonPin, void (*function)() /* = NULL */, FunctionCallOptions call_option /* = CALL_NONE */, bool pullup /* = false */)
 {
     m_function = function;
     m_call_option = call_option;
@@ -11,7 +11,12 @@ EasyButton::EasyButton(int buttonPin, void (*function)() /* = NULL */, FunctionC
     m_release_time = 0;
     m_pin = buttonPin;
     m_push_Threshold = DEFAULT_PUSH_THRESHOLD;
-    pinMode(m_pin, INPUT);
+    m_pullup_mode = pullup;
+
+    if (m_pullup_mode)
+        pinMode(m_pin, INPUT_PULLUP);
+    else
+        pinMode(m_pin, INPUT);
 }
 
 void EasyButton::update(unsigned long millisec /* = NULL */)
@@ -19,7 +24,7 @@ void EasyButton::update(unsigned long millisec /* = NULL */)
     if (!millisec)
         millisec = millis();
 
-    if (digitalRead(m_pin) == HIGH)
+    if (digitalRead(m_pin) == !m_pullup_mode)
     {
         if (!m_current_state && (m_hold_time <= 0 || ((long)(millisec - m_hold_time)) > long(DEBOUNCE_DELAY)))
         {

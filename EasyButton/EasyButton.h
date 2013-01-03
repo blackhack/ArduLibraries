@@ -35,6 +35,7 @@ private:
     bool m_press_notifier;
     bool m_release_notifier;
     bool m_hold;
+    bool m_pullup_mode;
     unsigned long m_hold_time;
     unsigned long m_release_time;
     int m_pin;
@@ -43,7 +44,7 @@ private:
     FunctionCallOptions m_call_option;
 
 public:
-    EasyButton(int buttonPin, void (*function)() = NULL, FunctionCallOptions call_option = CALL_NONE);
+    EasyButton(int buttonPin, void (*function)() = NULL, FunctionCallOptions call_option = CALL_NONE, bool pullup = false);
 
     void update(unsigned long millisec = NULL);
     bool IsPushed();
