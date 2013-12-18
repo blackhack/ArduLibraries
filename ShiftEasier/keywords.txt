@@ -1,0 +1,60 @@
+#######################################
+#   Syntax  Coloring
+#######################################
+
+#######################################
+#   Classes (KEYWORD1)
+#######################################
+ShiftEasier	KEYWORD1
+
+#######################################
+#   Methods and Functions (KEYWORD2)
+####################################### 
+init	KEYWORD2
+shiftOut	KEYWORD2
+Clear	KEYWORD2
+Write	KEYWORD2
+Read	KEYWORD2
+GetRegister	KEYWORD2
+mapPin	KEYWORD2
+
+#######################################
+#   Constants   (LITERAL1)
+#######################################
+ONE_REGISTER	LITERAL1
+TWO_REGISTER	LITERAL1
+THREE_REGISTER	LITERAL1
+FOUR_REGISTER	LITERAL1
+
+PIN_1_0	LITERAL1
+PIN_1_1	LITERAL1
+PIN_1_2	LITERAL1
+PIN_1_3	LITERAL1
+PIN_1_4	LITERAL1
+PIN_1_5	LITERAL1
+PIN_1_6	LITERAL1
+PIN_1_7	LITERAL1
+PIN_2_0	LITERAL1
+PIN_2_1	LITERAL1
+PIN_2_2	LITERAL1
+PIN_2_3	LITERAL1
+PIN_2_4	LITERAL1
+PIN_2_5	LITERAL1
+PIN_2_6	LITERAL1
+PIN_2_7	LITERAL1
+PIN_3_0	LITERAL1
+PIN_3_1	LITERAL1
+PIN_3_2	LITERAL1
+PIN_3_3	LITERAL1
+PIN_3_4	LITERAL1
+PIN_3_5	LITERAL1
+PIN_3_6	LITERAL1
+PIN_3_7	LITERAL1
+PIN_4_0	LITERAL1
+PIN_4_1	LITERAL1
+PIN_4_2	LITERAL1
+PIN_4_3	LITERAL1
+PIN_4_4	LITERAL1
+PIN_4_5	LITERAL1
+PIN_4_6	LITERAL1
+PIN_4_7	LITERAL1
