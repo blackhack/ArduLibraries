@@ -1,0 +1,20 @@
+#######################################
+#   Syntax  Coloring
+#######################################
+
+#######################################
+#   Classes (KEYWORD1)
+#######################################
+SimpleList	KEYWORD1
+
+#######################################
+#   Methods and Functions (KEYWORD2)
+####################################### 
+push_back	KEYWORD2
+push_front	KEYWORD2
+pop_back	KEYWORD2
+pop_front	KEYWORD2
+begin	KEYWORD2
+end	KEYWORD2
+empty	KEYWORD2
+size	KEYWORD2
