@@ -19,3 +19,5 @@ end	KEYWORD2
 empty	KEYWORD2
 size	KEYWORD2
 clear	KEYWORD2
+reserve	KEYWORD2
+capacity	KEYWORD2
