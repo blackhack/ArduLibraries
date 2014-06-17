@@ -138,15 +138,24 @@ public:
         _list = newBuffer;
 
         itr = _list + pos;
-		
+
         return itr;
     }
 
-    iterator begin() { return (empty() ? NULL : _list); }
-    iterator end() { return (empty() ? NULL : _list + _size); }
+    inline iterator begin() { return (empty() ? NULL : _list); }
+    inline iterator end() { return (empty() ? NULL : _list + _size); }
+    
+    void clear() 
+    {
+        if (_list)
+            delete[] _list;
+        _list = NULL;
+        _size = 0;
+    }
+    
 
     inline bool empty() { return !_size; }
-	inline unsigned int size() { return _size; }
+    inline unsigned int size() { return _size; }
 private:
     T* _list;
     unsigned int _size;

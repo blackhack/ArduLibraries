@@ -18,3 +18,4 @@ begin	KEYWORD2
 end	KEYWORD2
 empty	KEYWORD2
 size	KEYWORD2
+clear	KEYWORD2
