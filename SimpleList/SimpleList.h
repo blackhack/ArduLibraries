@@ -85,7 +85,10 @@ public:
         if (empty())
         {
             if (!_preAlloc)
+            {
                 delete[] _list;
+                _list = NULL;
+            }
             return;
         }
 
@@ -112,7 +115,10 @@ public:
         if (empty())
         {
             if (!_preAlloc)
+            {
                 delete[] _list;
+                _list = NULL;
+            }
             return;
         }
 
@@ -157,7 +163,10 @@ public:
         if (empty())
         {
             if (!_preAlloc)
+            {
                 delete[] _list;
+                _list = NULL;
+            }
             return NULL;
         }
 
@@ -186,8 +195,10 @@ public:
             delete[] _list;
             _list = newBuffer;
         }
-
-        itr = _list + pos;
+        if(sum)
+          itr = _list + pos;
+        else
+          itr = _list + _size;
 
         return itr;
     }
