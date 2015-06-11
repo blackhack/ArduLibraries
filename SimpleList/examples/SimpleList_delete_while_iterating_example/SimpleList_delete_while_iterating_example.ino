@@ -21,9 +21,7 @@ void setup()
   {
     if ((*itr) == 4) // delete this value therefore will not printing
     {
-      myList.erase(itr);
-      //itr = myList.erase(itr); // You can do this, this does the same as the previous
-      // myList.erase(itr++); // You can't do this.
+      itr = myList.erase(itr);
       continue;
     }
 
@@ -36,4 +34,3 @@ void loop()
 {
   // Nothing here
 }
-
