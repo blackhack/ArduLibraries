@@ -148,7 +148,7 @@ public:
 
             T* newArray = NULL;
 
-            if (_preAllocBlocks > 0)
+            if (_allocBlocks > 0)
                 newArray = new T[_allocBlocks];
 
             delete[] _internalArray;
@@ -156,6 +156,23 @@ public:
         }
 
         _endPosition = 0;
+    }
+
+    void shrink_to_fit()
+    {
+        _preAllocBlocks = _endPosition;
+        _allocBlocks = _endPosition;
+
+        T* newArray = NULL;
+
+        if (_allocBlocks > 0)
+            newArray = new T[_allocBlocks];
+
+        for (int i = 0; i < _endPosition; ++i)
+            newArray[i] = _internalArray[i];
+
+        delete[] _internalArray;
+        _internalArray = newArray;
     }
 
     inline iterator begin() { return _internalArray; }
@@ -182,6 +199,14 @@ private:
     void DeAllocOneBlock(bool shiftItems)
     {
         --_allocBlocks;
+
+        if (_allocBlocks == 0)
+        {
+            delete[] _internalArray;
+            _internalArray = NULL;
+            return;
+        }
+
         T* newArray = new T[_allocBlocks];
 
         for (int i = 0; i < _endPosition; ++i)
