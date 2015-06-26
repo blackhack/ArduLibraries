@@ -21,3 +21,4 @@ size	KEYWORD2
 clear	KEYWORD2
 reserve	KEYWORD2
 capacity	KEYWORD2
+shrink_to_fit KEYWORD2
