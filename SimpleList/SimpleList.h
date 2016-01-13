@@ -36,6 +36,41 @@ public:
         _preAllocBlocks = 0;
     }
 
+    SimpleList(const SimpleList& from)
+    {
+        _endPosition = from._endPosition;
+        _allocBlocks = from._allocBlocks;
+        _preAllocBlocks = from._preAllocBlocks;
+
+        _internalArray = new T[_allocBlocks];
+
+        for (int i = 0; i < _endPosition; ++i)
+            _internalArray[i] = from._internalArray[i];
+    }
+
+    SimpleList& operator=(const SimpleList& from)
+    {
+        if (this != &from)
+        {
+            _endPosition = from._endPosition;
+            _allocBlocks = from._allocBlocks;
+            _preAllocBlocks = from._preAllocBlocks;
+
+            delete[] _internalArray;
+            _internalArray = NULL;
+
+            if (_allocBlocks)
+            {
+                _internalArray = new T[_allocBlocks];
+
+                for (int i = 0; i < _endPosition; ++i)
+                    _internalArray[i] = from._internalArray[i];
+            }
+        }
+
+        return *this;
+    }
+
     void push_back(T item)
     {
         if (_endPosition == _allocBlocks)
