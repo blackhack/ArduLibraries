@@ -9,13 +9,26 @@
 #ifndef _TASKACTION_h
 #define _TASKACTION_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
-#include "Arduino.h"
-#else
-#include "WProgram.h"
+#if defined(ARDUINO)
+	#if ARDUINO >= 100
+		#include "Arduino.h"
+	#else
+		#include "WProgram.h"
+	#endif
 #endif
 
 #define INFINITE_TICKS 0
+#define MILLIS_RESOLUTION 0
+#define MICROS_RESOLUTION 1
+
+typedef void (*DEBUG_NAME_PRINTER)(char const * const name);
+
+struct TaskActionDebugHelper
+{
+    char * name;
+    DEBUG_NAME_PRINTER name_printer;
+    bool on;
+};
 
 class TaskAction
 {
@@ -25,14 +38,16 @@ private:
     bool m_state;
     unsigned long m_interval;
     unsigned long m_LastTime;
-    void (*m_function)();
-    char const * m_name;
-    bool m_debug;
+    int m_resolution;
+    void (*m_function)(TaskAction *);
+    TaskActionDebugHelper * m_debugHelper;
 
 public:
-    TaskAction(void (*function)(), unsigned long interval, unsigned int ticks, char const * n_name = NULL);
+    TaskAction(void (*function)(TaskAction*), unsigned long interval, unsigned int ticks, int resolution = MILLIS_RESOLUTION);
 
-    bool tick(unsigned long millisec = 0);
+    bool tick(unsigned long currentTime = 0);
+
+    void SetResolution(int resolution) { m_resolution = resolution; }
     void SetInterval(unsigned long interval) { m_interval = interval; }
     void SetTicks(unsigned int ticks) { m_tick = ticks; }
     void Enable(bool state) { m_state = state; }
@@ -41,7 +56,8 @@ public:
     unsigned long GetCurrentInterval() { return m_interval; }
     void ResetTicks() { m_CurrentTick = 0; }
     void ResetTime();
-    void SetDebug(bool on);
+
+    void SetDebugHelper(TaskActionDebugHelper * debugHelper) {m_debugHelper = debugHelper;}
 };
 
 #endif // _TASKACTION_h
