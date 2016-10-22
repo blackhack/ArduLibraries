@@ -18,6 +18,8 @@ GetCurrentState	   KEYWORD2
 GetCurrentTick	   KEYWORD2
 GetCurrentInterval KEYWORD2
 ResetTicks	   KEYWORD2
+ResetTime	   KEYWORD2
+SetDebug	   KEYWORD2
 
 #######################################
 #	Constants	(LITERAL1)
