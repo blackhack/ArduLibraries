@@ -1,0 +1,22 @@
+#######################################
+#   Syntax  Coloring
+#######################################
+
+#######################################
+#   Classes (KEYWORD1)
+#######################################
+DimmerOne	KEYWORD1
+dimmerOne	KEYWORD1
+
+#######################################
+#   Methods and Functions (KEYWORD2)
+####################################### 
+init				KEYWORD2
+Start				KEYWORD2
+Stop				KEYWORD2
+SetFiringAngle		KEYWORD2
+SetFrecuency		KEYWORD2
+SetZeroCrossingFix	KEYWORD2
+GetFiringAngle		KEYWORD2
+GetFrecuency		KEYWORD2
+GetZeroCrossingFix	KEYWORD2
