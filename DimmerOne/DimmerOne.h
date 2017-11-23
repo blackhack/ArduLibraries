@@ -8,7 +8,7 @@ class DimmerOne
 public:
     DimmerOne();
 
-    void init(uint8_t zero_crossing_pin, uint8_t output_pin, double frecuency /*= 60.0*/, double firing_angle /*= 90.0*/);
+    void init(uint8_t zero_crossing_pin, uint8_t output_pin, double frecuency = 60.0, double firing_angle = 90.0);
 
     bool Start();
     bool Stop();
